@@ -196,3 +196,11 @@ form button:hover {
   background-color: #f06292;
   color: #444;
 }
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #242424;
+  color: #fff;
+  height: 50px;
+}
