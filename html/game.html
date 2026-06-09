@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simpel Klikspel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            margin-top: 50px;
+        }
+        #blokje {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            color: white;
+            line-height: 100px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 20px auto;
+            transition: transform 0.1s;
+        }
+        #blokje:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Klik op het blauwe blokje!</h1>
+    <p>Punten: <span id="score">0</span></p>
+    <div id="blokje" onclick="klikVierkant()">Klik mij!</div>
+
+    <script>
+        let score = 0;
+
+        function klikVierkant() {
+            score++;
+            document.getElementById('score').innerText = score;
+            
+            // Verplaats het blokje naar een willekeurige plek
+            let x = Math.floor(Math.random() * (window.innerWidth - 120));
+            let y = Math.floor(Math.random() * (window.innerHeight - 150));
+            
+            let blokje = document.getElementById('blokje');
+            blokje.style.position = 'absolute';
+            blokje.style.left = x + 'px';
+            blokje.style.top = y + 'px';
+        }
+    </script>
+</body>
+</html>
